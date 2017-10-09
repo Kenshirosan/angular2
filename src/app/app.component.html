@@ -3,7 +3,12 @@
     <div class="row">
         <div class="col-md-12">
             <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
-            <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+            <!-- <p *appUnless="loadedFeature !== recipe">toto</p> -->
+                <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
+
+            <ng-template *ngIf="loadedFeature === 'recipe'">
+                <p appBetterHighlight [defaultColor]="'yellow'" [highlightColor]="'lightgreen'">Directive</p>
+            </ng-template>
         </div>
     </div>
 </div>
